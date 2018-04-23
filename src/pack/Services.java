@@ -26,8 +26,6 @@ public class Services
 	}
 	public static void weightUpdate(Neuron n,double learningRatio,int expectedOutput,int[] patterns)
 	{
-		for (int i = 0; i < 2; i++)
-		{
 			double net = net(n.getWeights(),patterns,n.getB());
 			int y = progowaUnipolarna(net);
 			double [] weightsNew = new double[n.getWeights().length];
@@ -40,6 +38,5 @@ public class Services
 			n.setWeights(weightsNew);
 			n.setB(bNew);
 			System.out.println(net);
-		}
 	}
 }

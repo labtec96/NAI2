@@ -15,14 +15,17 @@ public class Network
 	public void startTeaching()
 	{
 		ReadPatterns n = new ReadPatterns();
-		for (int i = 0; i < n.getPatternsListForZero().size(); i++)
+		for (int j = 0; j < 50; j++) 
 		{
-			Services.weightUpdate(neurons[0], learningRatio, 0, n.getPatternsListForZero().get(i));
-			Services.weightUpdate(neurons[1], learningRatio, 0, n.getPatternsListForZero().get(i));
-			Services.weightUpdate(neurons[0], learningRatio, 0, n.getPatternsListForOne().get(i));
-			Services.weightUpdate(neurons[1], learningRatio, 1, n.getPatternsListForOne().get(i));
-			Services.weightUpdate(neurons[0], learningRatio, 1, n.getPatternsListForTwo().get(i));
-			Services.weightUpdate(neurons[1], learningRatio, 0, n.getPatternsListForTwo().get(i));
+			for (int i = 0; i < 6; i++)
+			{
+				Services.weightUpdate(neurons[0], learningRatio, 0, n.getPatternsListForZero().get(i));
+				Services.weightUpdate(neurons[1], learningRatio, 0, n.getPatternsListForZero().get(i));
+				Services.weightUpdate(neurons[0], learningRatio, 0, n.getPatternsListForOne().get(i));
+				Services.weightUpdate(neurons[1], learningRatio, 1, n.getPatternsListForOne().get(i));
+				Services.weightUpdate(neurons[0], learningRatio, 1, n.getPatternsListForTwo().get(i));
+				Services.weightUpdate(neurons[1], learningRatio, 0, n.getPatternsListForTwo().get(i));
+			}
 		}
 	}
 
